@@ -21,6 +21,8 @@ const NEUTRAL_ANGLE = 90;
 const ANGLE_OFFSET = 20;
 const ANGLE_OFFSET_DURATION = 200;
 
+const MAX_POWER_BOOST = 10;
+
 module.exports = {
   MOTOR_PORT,
   RUDDER_PORT,
@@ -97,15 +99,17 @@ board.on('ready', async function() {
         angle = center(rudder, NEUTRAL_ANGLE);
         break;
       case 'INC':
-        powerBoostSpeed++;
+        powerBoostSpeed = Math.min(MAX_POWER_BOOST, powerBoostSpeed + 1);
         break;
       case 'DEC':
-        powerBoostSpeed--;
+        powerBoostSpeed = Math.max(SLOW_INCREMENT, powerBoostSpeed - 1);
         break;
       default:
         break;
     }
+    
     console.log(`current angle: ${angle}`);
     console.log(`current speed: ${speed}`);
+    console.log(`current powerBoost: ${powerBoostSpeed}`);
   });
 });
