@@ -5,8 +5,7 @@ const getJoycon = require('./joyconController');
 const mapBufferToValue = require('./joyconInputFilter');
 
 
-// constants
-
+// constants...
 const MOTOR_PORT = 11;
 const RUDDER_PORT = 12;
 const LED_PORT = 13;
@@ -23,6 +22,7 @@ const ANGLE_OFFSET_DURATION = 200;
 
 const MAX_POWER_BOOST = 10;
 
+// ...to go in constants file later
 module.exports = {
   MOTOR_PORT,
   RUDDER_PORT,
@@ -107,7 +107,7 @@ board.on('ready', async function() {
       default:
         break;
     }
-    
+
     console.log(`current angle: ${angle}`);
     console.log(`current speed: ${speed}`);
     console.log(`current powerBoost: ${powerBoostSpeed}`);
