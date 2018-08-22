@@ -26,4 +26,4 @@ module.exports = function onJoyconData(buff) {
   }
 }
 
-onJoyconData.DIRECTIONS = DIRECTIONS;
+module.exports.DIRECTIONS = DIRECTIONS;
