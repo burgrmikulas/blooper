@@ -19,6 +19,7 @@
   "homepage": "https://github.com/burgrmikulas/blooper#readme",
   "dependencies": {
     "johnny-five": "0.15.0",
-    "keypress": "0.2.1"
+    "keypress": "0.2.1",
+    "node-hid": "^0.7.3"
   }
 }
