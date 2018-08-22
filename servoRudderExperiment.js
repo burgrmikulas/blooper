@@ -10,7 +10,7 @@ board.on('ready', function() {
   const led = new five.Led(13); // use built-in led on Arduino
 
   const servo = new five.Servo({
-    pin: 8,
+    pin: 12,
     range: [45, 135],
     startAt: 90
   });
