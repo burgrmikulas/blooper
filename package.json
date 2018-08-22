@@ -1,0 +1,23 @@
+{
+  "name": "blooper",
+  "version": "1.0.0",
+  "description": "a node boat!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/burgrmikulas/blooper.git"
+  },
+  "author": "Ben, Mickaulas, Paul",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/burgrmikulas/blooper/issues"
+  },
+  "homepage": "https://github.com/burgrmikulas/blooper#readme",
+  "dependencies": {
+    "johnny-five": "0.15.0"
+  }
+}
