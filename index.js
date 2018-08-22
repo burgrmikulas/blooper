@@ -14,8 +14,8 @@ const LED_PORT = 13;
 const NEUTRAL_SPEED = 50;
 const MAX_SPEED = 100;
 const MIN_SPEED = 0;
-const FAST_INCREMENT = 10;
-const SLOW_INCREMENT = 5;
+const FAST_INCREMENT = 7;
+const SLOW_INCREMENT = 4;
 
 const NEUTRAL_ANGLE = 90;
 const ANGLE_OFFSET = 20;
