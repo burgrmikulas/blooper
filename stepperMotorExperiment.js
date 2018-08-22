@@ -15,6 +15,7 @@ board.on("ready", function() {
     neutral: 50,
   });
   let escSpeed = esc.value;
+  console.log('esc initialized, neutral speed is 50')
 
   function controller(ch, key) {
     console.log(`controller initialized with ${key.name} key: `, key)
@@ -25,16 +26,17 @@ board.on("ready", function() {
     }
 
     if (key && key.name === 'up') {
-      console.log('up key pressed, motor should speed up forward', esc.value);
+      console.log('up key pressed, motor should speed up forward. here is the prior speed: ', esc.value);
       escSpeed += 5;
       esc.speed(escSpeed);
       console.log('new speed', esc.value)
     }
 
     if (key && key.name === 'down') {
-      console.log('down key pressed');
+      console.log('down key pressed, motor should speed up in reverse. here is the prior speed: ', esc.value);
       escSpeed -= 5;
       esc.speed(escSpeed);
+      console.log('new speed', esc.value)
     }
 
     if (key && key.name === 'c') {
