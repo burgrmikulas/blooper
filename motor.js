@@ -16,13 +16,15 @@ const initMotor = (pin = MOTOR_PORT, neutral = NEUTRAL_SPEED) => {
 }
 
 const forward = (motor, speed, increment = SLOW_INCREMENT) => {
-  speed = five.Fn.constrain(speed + increment, MIN_SPEED, MAX_SPEED);
+  speed += increment;
+  //speed = five.Fn.constrain(speed + increment, MIN_SPEED, MAX_SPEED);
   motor.speed(speed);
   return speed;
 }
 
 const reverse = (motor, speed, decrement = SLOW_INCREMENT) => {
-  speed = five.Fn.constrain(speed - decrement, MIN_SPEED, MAX_SPEED);
+  //speed = five.Fn.constrain(speed - decrement, MIN_SPEED, MAX_SPEED);
+  speed -= decrement;
   motor.speed(speed);
   return speed;
 }
