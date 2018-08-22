@@ -11,13 +11,14 @@
     "type": "git",
     "url": "git+https://github.com/burgrmikulas/blooper.git"
   },
-  "author": "Ben, Mickaulas, Paul",
+  "author": "Ben, Mikulas, Paul",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/burgrmikulas/blooper/issues"
   },
   "homepage": "https://github.com/burgrmikulas/blooper#readme",
   "dependencies": {
-    "johnny-five": "0.15.0"
+    "johnny-five": "0.15.0",
+    "keypress": "0.2.1"
   }
 }
