@@ -4,6 +4,9 @@ const { initRudder, left, right, center } = require('./rudder');
 const getJoycon = require('./joyconController');
 const mapBufferToValue = require('./joyconInputFilter');
 
+
+// constants
+
 const MOTOR_PORT = 11;
 const RUDDER_PORT = 12;
 const LED_PORT = 13;
@@ -17,6 +20,22 @@ const SLOW_INCREMENT = 5;
 const NEUTRAL_ANGLE = 90;
 const ANGLE_OFFSET = 20;
 const ANGLE_OFFSET_DURATION = 200;
+
+module.exports = {
+  MOTOR_PORT,
+  RUDDER_PORT,
+  LED_PORT,
+
+  NEUTRAL_SPEED,
+  MIN_SPEED,
+  MAX_SPEED,
+  FAST_INCREMENT,
+  SLOW_INCREMENT,
+
+  NEUTRAL_ANGLE,
+  ANGLE_OFFSET,
+  ANGLE_OFFSET_DURATION,
+}
 
 
 const board = new five.Board({

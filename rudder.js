@@ -1,6 +1,7 @@
 const five = require('johnny-five');
+const { RUDDER_PORT, NEUTRAL_ANGLE, ANGLE_OFFSET, ANGLE_OFFSET_DURATION } = require('./index');
 
-const initRudder = (pin = 12, startAt = 90) => {
+const initRudder = (pin = RUDDER_PORT, startAt = NEUTRAL_ANGLE) => {
   const rudder = new five.Servo({
     pin,
     range: [45, 135],
@@ -14,19 +15,19 @@ const initRudder = (pin = 12, startAt = 90) => {
   }
 }
 
-const left = (rudder, angle, offset = 20, duration = 200) => {
+const left = (rudder, angle, offset = ANGLE_OFFSET, duration = ANGLE_OFFSET_DURATION) => {
   angle -= offset;
   rudder.to(angle, duration);
   return angle;
 }
 
-const right = (rudder, angle, offset = 20, duration = 200) => {
+const right = (rudder, angle, offset = ANGLE_OFFSET, duration = ANGLE_OFFSET_DURATION) => {
   angle += offset;
   rudder.to(angle, duration);
   return angle;
 }
 
-const center = (rudder, start = 90) => {
+const center = (rudder, start = NEUTRAL_ANGLE) => {
   rudder.to(start);
   return start;
 }
