@@ -55,6 +55,7 @@ board.on('ready', async function() {
 
   let { motor, speed } = initMotor(MOTOR_PORT, NEUTRAL_SPEED);
   let { rudder, angle } = initRudder(RUDDER_PORT, NEUTRAL_ANGLE);
+  let powerBoostSpeed = FAST_INCREMENT;
 
   const joycon = await getJoycon();
 
@@ -64,10 +65,10 @@ board.on('ready', async function() {
 
     switch (buffVal) {
       case 'N':
-        speed = forward(motor, speed, FAST_INCREMENT);
+        speed = forward(motor, speed, powerBoostSpeed);
         break;
       case 'S':
-        speed = reverse(motor, speed, FAST_INCREMENT);
+        speed = reverse(motor, speed, powerBoostSpeed);
         break;
       case 'E':
         angle = left(rudder, angle, ANGLE_OFFSET, ANGLE_OFFSET_DURATION);
@@ -94,6 +95,12 @@ board.on('ready', async function() {
       case 'OFF':
         speed = brake(motor, NEUTRAL_SPEED);
         angle = center(rudder, NEUTRAL_ANGLE);
+        break;
+      case 'INC':
+        powerBoostSpeed++;
+        break;
+      case 'DEC':
+        powerBoostSpeed--;
         break;
       default:
         break;
