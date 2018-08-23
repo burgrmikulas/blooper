@@ -14,6 +14,9 @@ const initRudder = (pin = 12, startAt = 90) => {
   }
 }
 
+// TODO: left and right should be reversed
+// TODO: angle should be reduced
+// TODO: init at < 90
 const left = (rudder, angle, offset = 20, duration = 200) => {
   angle -= offset;
   rudder.to(angle, duration);

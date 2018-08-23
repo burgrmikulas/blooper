@@ -14,6 +14,7 @@ const initMotor = (pin = 11, neutral = 50) => {
   }
 }
 
+// TODO: should reverse slower
 const reverse = (motor, speed, decrement = 4) => {
   speed += decrement;
   //speed = five.Fn.constrain(speed + decrement, MIN_SPEED, MAX_SPEED);
